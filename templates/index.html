@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Type Theory Docs</title>
+</head>
+<body>
+<h1>Available Notebooks</h1>
+<ul>
+{% for nb in notebooks %}
+<li><a href="/notebook/{{ nb }}">{{ nb }}</a></li>
+{% endfor %}
+</ul>
+<form action="/api/notebooks" method="post" enctype="multipart/form-data">
+    <h2>Upload Notebook</h2>
+    Name: <input type="text" name="name" />
+    File: <input type="file" name="file" />
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>
